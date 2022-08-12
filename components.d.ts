@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Board: typeof import('./src/components/Board.vue')['default']
+    ChessPiece: typeof import('./src/components/ChessPiece.vue')['default']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElFooter: typeof import('element-plus/es')['ElFooter']
     ElHeader: typeof import('element-plus/es')['ElHeader']

@@ -29,10 +29,23 @@
         {{ String.fromCharCode("A".charCodeAt(0) + i - 1) }}
       </div>
     </div>
+
+    <div class="pieces">
+      <ChessPiece v-for="p of pieceStore.pieces" :uuid="p.uuid" />
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import { usePieceStore } from "@/stores/piece";
+  import ChessPiece from "./ChessPiece.vue";
+
+  const pieceStore = usePieceStore();
+
+  // if (pieceStore.pieces.length === 0) {
+  pieceStore.reset();
+  // }
+</script>
 
 <style lang="scss" scoped>
   .board {
@@ -63,11 +76,12 @@
       border-radius: 0;
 
       &.colored {
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(59, 117, 192, 0.4);
       }
     }
 
-    .cells {
+    .cells,
+    .pieces {
       grid-column-start: 2;
       grid-row-start: 2;
       grid-column-end: span 8;
@@ -137,6 +151,8 @@
       color: #d9ddee;
       font-weight: bold;
       font-size: max(8px, 2.3vmin);
+      user-select: none;
+      touch-action: none;
 
       &.reverse {
         transform: rotate(180deg);
