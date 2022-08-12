@@ -14,6 +14,7 @@ export default defineConfig({
     AutoImport({
       dts: true,
       eslintrc: { enabled: true },
+      imports: ["@vueuse/core", "vue-router", "vue"],
       resolvers: [ElementPlusResolver()],
     }),
     Components({ dts: true, resolvers: [ElementPlusResolver()] }),
