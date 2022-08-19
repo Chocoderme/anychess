@@ -44,6 +44,7 @@
 <script lang="ts" setup>
   import { usePieceLogicStore } from "@/stores/pieceLogic";
   import Konva from "konva";
+  import type { VueKonvaConfig } from "@/types/vueKonvaConfig";
   import { v4 as uuid } from "uuid";
 
   const pieceLogicStore = usePieceLogicStore();
@@ -63,8 +64,7 @@
     )
   );
 
-  pieceLogicStore.reset();
-  const configKonva = ref<Omit<Konva.StageConfig, "container">>({
+  const configKonva = ref<VueKonvaConfig>({
     width: 300,
     height: 300,
   });
