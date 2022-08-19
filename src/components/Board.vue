@@ -31,20 +31,36 @@
     </div>
 
     <div class="pieces">
-      <ChessPiece v-for="p of pieceStore.pieces" :uuid="p.uuid" />
+      <ChessPiece
+        @click="handleChessPieceClick(p)"
+        v-for="p of pieceStore.pieces"
+        :uuid="p.uuid"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
   import { usePieceStore } from "@/stores/piece";
+  import { useGameStore } from "@/stores/game";
   import ChessPiece from "./ChessPiece.vue";
 
   const pieceStore = usePieceStore();
+  const gameStore = useGameStore();
 
   // if (pieceStore.pieces.length === 0) {
   pieceStore.reset();
   // }
+
+  const handleChessPieceClick = (piece: typeof pieceStore.pieces[number]) => {
+    if (gameStore.selectionUuid === piece.uuid) {
+      gameStore.selectionUuid = undefined;
+    } else {
+      if (piece.black === gameStore.isBlackTurn) {
+        gameStore.selectionUuid = piece.uuid;
+      }
+    }
+  };
 </script>
 
 <style lang="scss" scoped>

@@ -37,6 +37,7 @@ export const usePieceStore = defineStore({
       size: number;
       position: { x: number; y: number };
       black: boolean;
+      getValidMovements: () => { x: number; y: number }[];
     }[],
   }),
   getters: {
@@ -58,6 +59,7 @@ export const usePieceStore = defineStore({
           size: 0.8,
           position: { x: i, y: 2 },
           black: false,
+          getValidMovements: () => [],
         });
         this.pieces.push({
           uuid: uuidv4(),
@@ -67,6 +69,7 @@ export const usePieceStore = defineStore({
           size: 0.8,
           position: { x: i, y: 7 },
           black: true,
+          getValidMovements: () => [],
         });
       }
 
@@ -79,6 +82,7 @@ export const usePieceStore = defineStore({
         size: 0.8,
         position: { x: 5, y: 1 },
         black: false,
+        getValidMovements: () => [],
       });
       this.pieces.push({
         uuid: uuidv4(),
@@ -88,6 +92,7 @@ export const usePieceStore = defineStore({
         size: 0.8,
         position: { x: 4, y: 8 },
         black: true,
+        getValidMovements: () => [],
       });
 
       // 1 Queen
@@ -99,6 +104,7 @@ export const usePieceStore = defineStore({
         size: 0.8,
         position: { x: 4, y: 1 },
         black: false,
+        getValidMovements: () => [],
       });
       this.pieces.push({
         uuid: uuidv4(),
@@ -108,6 +114,7 @@ export const usePieceStore = defineStore({
         size: 0.8,
         position: { x: 5, y: 8 },
         black: true,
+        getValidMovements: () => [],
       });
 
       // 2 Rooks
@@ -120,6 +127,7 @@ export const usePieceStore = defineStore({
           size: 0.8,
           position: { x: 1 + i, y: 1 },
           black: false,
+          getValidMovements: () => [],
         });
         this.pieces.push({
           uuid: uuidv4(),
@@ -129,6 +137,7 @@ export const usePieceStore = defineStore({
           size: 0.8,
           position: { x: 1 + i, y: 8 },
           black: true,
+          getValidMovements: () => [],
         });
       }
 
@@ -142,6 +151,7 @@ export const usePieceStore = defineStore({
           size: 0.8,
           position: { x: i, y: 1 },
           black: false,
+          getValidMovements: () => [],
         });
         this.pieces.push({
           uuid: uuidv4(),
@@ -151,6 +161,7 @@ export const usePieceStore = defineStore({
           size: 0.8,
           position: { x: i, y: 8 },
           black: true,
+          getValidMovements: () => [],
         });
       }
 
@@ -164,6 +175,7 @@ export const usePieceStore = defineStore({
           size: 0.8,
           position: { x: i, y: 1 },
           black: false,
+          getValidMovements: () => [],
         });
         this.pieces.push({
           uuid: uuidv4(),
@@ -173,6 +185,7 @@ export const usePieceStore = defineStore({
           size: 0.8,
           position: { x: i, y: 8 },
           black: true,
+          getValidMovements: () => [],
         });
       }
     },

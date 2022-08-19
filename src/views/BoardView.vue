@@ -5,7 +5,7 @@
     </ElHeader>
     <ElMain>
       <div class="container">
-        <h1>Welcome to Anychess</h1>
+        <Board />
       </div>
     </ElMain>
   </ElContainer>
@@ -26,6 +26,5 @@
     padding-top: 30px;
     aspect-ratio: 1;
     margin: 0 auto;
-    text-align: center;
   }
 </style>
