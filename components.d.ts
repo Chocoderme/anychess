@@ -7,8 +7,12 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BlockInput: typeof import('./src/components/logic-builder/BlockInput.vue')['default']
+    BlockIO: typeof import('./src/components/logic-builder/BlockIO.vue')['default']
+    BlockRect: typeof import('./src/components/logic-builder/BlockRect.vue')['default']
     Board: typeof import('./src/components/Board.vue')['default']
     ChessPiece: typeof import('./src/components/ChessPiece.vue')['default']
+    CreateBlock: typeof import('./src/components/logic-builder/CreateBlock.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElFooter: typeof import('element-plus/es')['ElFooter']

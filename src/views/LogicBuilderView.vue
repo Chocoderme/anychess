@@ -24,6 +24,10 @@
 
   const pieceLogicStore = usePieceLogicStore();
   pieceLogicStore.reset();
+
+  if (pieceLogicStore.activeType === undefined) {
+    pieceLogicStore.activeType = pieceLogicStore.pieces?.[0]?.type;
+  }
 </script>
 
 <style lang="scss" scoped>
